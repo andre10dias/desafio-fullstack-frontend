@@ -1,0 +1,7 @@
+h4 {
+  color: #343a40;
+}
+.card-body {
+  min-height: 70px;
+  padding: 10px;
+}

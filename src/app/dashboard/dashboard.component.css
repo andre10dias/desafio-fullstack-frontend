@@ -1,0 +1,42 @@
+h2 {
+  color: #0f4b84;
+  padding-bottom: 30px;
+}
+
+.cards-content {
+  display:flex;
+  justify-content: space-around;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+app-cartao p {
+  font-size: 30px;
+  color: #0d6efd;
+  font-weight: 600;
+  line-height: 0.8;
+  margin: 0px;
+}
+
+app-cartao p span {
+  font-size: 14px;
+  color: #343a40;
+  font-weight: 400;
+}
+
+select {
+  width: 100%;
+  min-height: 40px;
+}
+
+.middle-content {
+  flex-wrap: nowrap;
+  margin: 60px 30px 80px 160px;
+  align-items: center;
+}
+
+/* .flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */

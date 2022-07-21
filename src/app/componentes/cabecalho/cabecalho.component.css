@@ -1,0 +1,26 @@
+i {
+  color: #76B947;
+}
+
+.menu-bars {
+  margin: 20px;
+}
+
+ul.list-unstyled li {
+  background-color: #d9dfdf;
+}
+
+ul.list-unstyled li a {
+  color: #76B947;
+  font-weight: 600;
+  margin-left: 3px;
+}
+
+li.active {
+  border-left: 1px solid red;
+}
+
+a {
+  cursor: pointer;
+}
+

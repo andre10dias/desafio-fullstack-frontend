@@ -1,0 +1,126 @@
+<app-cabecalho [activeDashboard]="true"></app-cabecalho>
+<div class="row">
+  <div class="col-md-12 d-flex justify-content-center">
+    <h2>Dashboard FORD</h2>
+  </div>
+</div>
+
+<div class="td-page-wrapper"
+  *ngIf="this.filtro$ | async as veiculos; else elseBlock">
+  <div *ngFor="let veiculo of veiculos">
+    <div class="row cards-content">
+      <div class="col-md-3">
+        <app-cartao [titulo]="'Veículo'">
+          <div>
+            <select [formControl]="veiculoSelect">
+              <option value="" selected></option>
+              <option *ngFor="let veiculoSel of allVeiculos$ | async"
+                [value]="veiculoSel.modelo">{{veiculoSel.modelo}}</option>
+            </select>
+          </div>
+        </app-cartao>
+      </div>
+
+      <div class="col-md-3">
+        <app-cartao [titulo]="'Total de Vendas'">
+          <p class="fields">{{veiculo.total_vendas}}</p>
+          <p class="fields"><span>Unid.</span></p>
+        </app-cartao>
+      </div>
+
+      <div class="col-md-3">
+        <app-cartao [titulo]="'Conectados'">
+          <p class="fields">{{veiculo.conectado}}</p>
+          <p class="fields"><span>Unid.</span></p>
+        </app-cartao>
+      </div>
+
+      <div class="col-md-3">
+        <app-cartao [titulo]="'Update Software'">
+          <p class="fields">{{veiculo.atualizacao_software}}</p>
+          <p class="fields"><span>Unid.</span></p>
+        </app-cartao>
+      </div>
+    </div>
+
+    <div class="row middle-content">
+      <div class="col-md-4">
+        <img
+          class="img-fluid d-none d-sm-block"
+          [src]="this.source"
+          [alt]="alt"
+        />
+      </div>
+  
+      <div class="col-md-8">
+        <app-dashboard-chart 
+          [dataSoftUpdate]="this.dataSoftUpdate"
+          [dataConnected]="this.dataConnected">
+        </app-dashboard-chart>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <div class="row cards-content">
+    <div class="col-md-3">
+      <app-cartao [titulo]="'Veículo'">
+        <div>
+          <select id="comboVeiculo" [formControl]="veiculoSelect">
+            <option value=""></option>
+          </select>
+        </div>
+      </app-cartao>
+    </div>
+
+    <div class="col-md-3">
+      <app-cartao [titulo]="'Total de Vendas'">
+        <p class="fields-default"></p>
+        <p><span>Unid.</span></p>
+      </app-cartao>
+    </div>
+
+    <div class="col-md-3">
+      <app-cartao [titulo]="'Conectados'">
+        <p class="fields-default"></p>
+        <p><span>Unid.</span></p>
+      </app-cartao>
+    </div>
+
+    <div class="col-md-3">
+      <app-cartao [titulo]="'Update Software'">
+        <p class="fields-default"></p>
+        <p><span>Unid.</span></p>
+      </app-cartao>
+    </div>
+  </div>
+
+  <div class="row middle-content">
+    <div class="col-md-4">
+      <img
+        class="img-fluid d-none d-sm-block"
+        [src]="this.source"
+        [alt]="alt"
+      />
+    </div>
+
+    <div class="col-md-8 ml-5">
+      <div *ngFor="let data of dataChart$ | async; let i = index" [attr.data-index]="i">
+        <div *ngIf="this.random == i">
+          <app-dashboard-chart 
+            [dataConnected]="[
+              ['Total de vendas', data.total_vendas],
+              ['Conectados', data.conectado],
+            ]"
+            [dataSoftUpdate]="[
+              ['Total de vendas', data.total_vendas],
+              ['Conectados', data.atualizacao_software],
+            ]">
+          </app-dashboard-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<app-rodape></app-rodape>

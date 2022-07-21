@@ -1,0 +1,59 @@
+.form {
+  background-color: #e9ecef;
+}
+
+.logo {
+  padding-top: 50px;
+  display: flex;
+  padding-bottom: 250px;
+}
+
+.logo img {
+  width: 30%;
+}
+
+div.d-flex h2 {
+  color: #76B947;
+}
+
+.fields {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.form-switch {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: space-between !important;
+  padding-left: 380px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.form-check-label {
+  margin-right: -64px;
+}
+
+.form-check-input {
+	height: 1.5em !important;
+  width: 3em !important;
+}
+
+.d-grid {
+  padding-bottom: 208px;
+}
+
+.input-group-text {
+  border-right: none;
+  background-color: #ffffff;
+}
+
+.input-group-text i {
+  color: #76B947;
+  width: 20px;
+}
+
+.form-control {
+  border-left: none;
+  background-color: #ffffff;
+}

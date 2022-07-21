@@ -1,0 +1,38 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-light bg-white">
+    <div class="menu-bars">
+      <a class="navbar-brand">
+        <i class="fa fa-bars mr-2"
+          (click)="menu.openMenu()"
+          (keyup.space)="menu.openMenu()">
+        </i>
+      </a>
+
+      <app-menu #menu>
+        <ul class="list-unstyled">
+          <li [ngClass]="{'active': activeHome}">
+            <a (click)="goHome()">Home</a>
+          </li>
+          <li [ngClass]="{'active': activeDashboard}">
+            <a (click)="goDashboard()">Dashboard</a>
+          </li>
+        </ul>
+      </app-menu>
+    </div>
+
+    <div class="menu-bars" *ngIf="user$ | async as user">
+      <div *ngIf="user.nome">
+        <a (click)="logout()">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          {{ user.nome }}
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- <ng-template #login>
+    <span class="navbar-text">
+      <a >Login</a>
+    </span>
+  </ng-template> -->
+</header>

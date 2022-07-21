@@ -1,0 +1,56 @@
+<footer class="footer navbar-fixed-bottom">
+  <div *ngIf="this.filtroInput$ | async as veiculos; else elseData">
+    <app-dados-tabela>
+      <tbody *ngFor="let veiculo of veiculos">
+        <input type="hidden" name="id" id="id" value="{{veiculo.id}}">
+        <tr>
+          <td>
+            <input id="inputDefault" type="text" [formControl]="codigoInput">
+            <button (click)="openModal($event, actionEnum.CREATE)">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <button (click)="openModal($event, actionEnum.EDIT)">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+            <button (click)="openModal($event, actionEnum.DELETE)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td class="cols">{{veiculo.odometro}}</td>
+          <td class="cols">{{veiculo.nivel_combustivel}}%</td>
+          <td class="cols">{{veiculo.status_veiculo}}</td>
+          <td class="cols">{{veiculo.latitude}}</td>
+          <td class="cols">{{veiculo.longitude}}</td>
+        </tr>
+      </tbody>
+    </app-dados-tabela>
+  </div>
+
+  <ng-template #elseData>
+    <app-dados-tabela>
+      <tbody>
+        <input type="hidden" name="id" id="id">
+        <tr>
+          <td>
+            <input id="inputDefault" type="text" [formControl]="codigoInput">
+            <button (click)="openModal($event, actionEnum.CREATE)">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <button (click)="openModal($event, actionEnum.EDIT)">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+            <button (click)="openModal($event, actionEnum.DELETE)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td class="data"></td>
+          <td class="data"></td>
+          <td class="data"></td>
+          <td class="data"></td>
+          <td class="data"></td>
+        </tr>
+      </tbody>
+    </app-dados-tabela>
+  </ng-template>
+</footer>
+<app-modal></app-modal>

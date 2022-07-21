@@ -1,0 +1,18 @@
+.table-responsive {
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+table > thead, table > tfoot {
+  background-color: #0f4b84;
+  color: white;
+}
+
+th {
+  font-weight: 400;
+  padding: 8px 0 8px 10px;
+}
+
+tfoot td {
+  height: 25px;
+}

@@ -1,0 +1,13 @@
+.modal {
+    padding-left: 30%;
+}
+
+.show-modal {
+    opacity: 1;
+    display: block;
+}
+
+.hide-modal {
+    opacity: 0;
+    display: none;
+}
