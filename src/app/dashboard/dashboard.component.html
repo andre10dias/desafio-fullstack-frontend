@@ -1,6 +1,6 @@
 <app-cabecalho [activeDashboard]="true"></app-cabecalho>
 <div class="row">
-  <div class="col-md-12 d-flex justify-content-center">
+  <div class="col-sm-12 d-flex justify-content-center">
     <h2>Dashboard FORD</h2>
   </div>
 </div>
@@ -9,7 +9,7 @@
   *ngIf="this.filtro$ | async as veiculos; else elseBlock">
   <div *ngFor="let veiculo of veiculos">
     <div class="row cards-content">
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <app-cartao [titulo]="'Veículo'">
           <div>
             <select [formControl]="veiculoSelect">
@@ -21,21 +21,21 @@
         </app-cartao>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <app-cartao [titulo]="'Total de Vendas'">
           <p class="fields">{{veiculo.total_vendas}}</p>
           <p class="fields"><span>Unid.</span></p>
         </app-cartao>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <app-cartao [titulo]="'Conectados'">
           <p class="fields">{{veiculo.conectado}}</p>
           <p class="fields"><span>Unid.</span></p>
         </app-cartao>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <app-cartao [titulo]="'Update Software'">
           <p class="fields">{{veiculo.atualizacao_software}}</p>
           <p class="fields"><span>Unid.</span></p>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="row middle-content">
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <img
           class="img-fluid d-none d-sm-block"
           [src]="this.source"
@@ -52,7 +52,7 @@
         />
       </div>
   
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <app-dashboard-chart 
           [dataSoftUpdate]="this.dataSoftUpdate"
           [dataConnected]="this.dataConnected">
@@ -64,7 +64,7 @@
 
 <ng-template #elseBlock>
   <div class="row cards-content">
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <app-cartao [titulo]="'Veículo'">
         <div>
           <select id="comboVeiculo" [formControl]="veiculoSelect">
@@ -74,21 +74,21 @@
       </app-cartao>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <app-cartao [titulo]="'Total de Vendas'">
         <p class="fields-default"></p>
         <p><span>Unid.</span></p>
       </app-cartao>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <app-cartao [titulo]="'Conectados'">
         <p class="fields-default"></p>
         <p><span>Unid.</span></p>
       </app-cartao>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <app-cartao [titulo]="'Update Software'">
         <p class="fields-default"></p>
         <p><span>Unid.</span></p>
@@ -97,7 +97,7 @@
   </div>
 
   <div class="row middle-content">
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <img
         class="img-fluid d-none d-sm-block"
         [src]="this.source"
@@ -105,7 +105,7 @@
       />
     </div>
 
-    <div class="col-md-8 ml-5">
+    <div class="col-sm-8 ml-5">
       <div *ngFor="let data of dataChart$ | async; let i = index" [attr.data-index]="i">
         <div *ngIf="this.random == i">
           <app-dashboard-chart 
@@ -124,3 +124,4 @@
   </div>
 </ng-template>
 <app-rodape></app-rodape>
+
