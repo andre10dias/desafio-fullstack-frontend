@@ -1,73 +1,95 @@
-<div class="row">
-  <div class="col-md-6 d-flex flex-column justify-content-center">
-    <img
-      class="img-fluid d-none d-sm-block"
-      src="assets/img/ranger.png"
-      alt="Imagem Ford Ranger vermelha"
-    />
-  </div>
-  <div class="col-md-6">
-    <form class="form" (ngSubmit)="loginSubmit()"  #loginForm="ngForm">
-      <div class="row">
-        <div class="col-md-12 logo d-flex justify-content-center">
-          <img
-            class="img-fluid d-none d-sm-block"
-            src="assets/img/ford.png"
-            alt="Imagem logo Ford"
-          />
-        </div>
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="vert-align d-flex justify-content-center">
+        <img
+          class="img-fluid d-none d-sm-block"
+          src="assets/img/ranger.png"
+          alt="Imagem Ford Ranger vermelha"
+        />
       </div>
-
-      <div class="d-flex justify-content-center mb-5">
-        <h2>Boas-vindas</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 fields">
-          <div class="mb-3 form-group">
-            <div class="input-group">
-              <span class="input-group-text">
-                <i class="fa fa-user-o" aria-hidden="true"></i>
-              </span>
-              <input type="text" name="usuario" id="usuario" class="form-control"
-              placeholder="Nome do usuário"  [(ngModel)]="usuario"
-              #campoUsuario="ngModel" required/>
+    </div>
+    <div class="col-sm-6">
+      <div class="content-screen">
+        <form class="form" (ngSubmit)="loginSubmit()"  #loginForm="ngForm">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="logo d-flex justify-content-center">
+                <img
+                  class="img-fluid d-none d-sm-block"
+                  src="assets/img/ford.png"
+                  alt="Imagem logo Ford"
+                />
+              </div>
             </div>
-            <app-mensagem
-              *ngIf="campoUsuario.invalid && campoUsuario.touched"
-              mensagem="Usuário obrigatório">
-            </app-mensagem>
           </div>
-
-          <div class="mb-3 form-group">
-            <div class="input-group">
-              <span class="input-group-text">
-                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-              </span>
-              <input type="password" name="senha" id="senha" class="form-control"
-              placeholder="Senha"  [(ngModel)]="senha"
-              #campoSenha="ngModel" required/>
+    
+          <div class="row">
+            <div class="d-flex justify-content-center mb-5">
+              <h2>Boas-vindas</h2>
             </div>
-            <app-mensagem
-              *ngIf="campoSenha.invalid && campoSenha.touched"
-              mensagem="Senha obrigatória">
-            </app-mensagem>
           </div>
-
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox"
-            id="flexSwitch" (change)="checkRemember()">
-            <label class="form-check-label fw-bolder"
-            for="flexSwitch">Logar automaticamente</label>
+          
+          <div class="row">
+            <div class="col-sm-12 fields">
+              <div class="mb-3 form-group">
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                  </span>
+                  <input type="text" name="usuario" id="usuario" class="form-control"
+                  placeholder="Nome do usuário"  [(ngModel)]="usuario"
+                  #campoUsuario="ngModel" required/>
+                </div>
+                <app-mensagem
+                  *ngIf="campoUsuario.invalid && campoUsuario.touched"
+                  mensagem="Usuário obrigatório">
+                </app-mensagem>
+              </div>
+            </div>
           </div>
-
-          <div class="d-grid gap-2 mx-auto">
-            <button  type="submit" class="btn btn-primary"
-            [disabled]="loginForm.invalid">
-            Entrar</button>
+    
+          <div class="row">
+            <div class="col-sm-12 fields">
+              <div class="mb-3 form-group">
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                  </span>
+                  <input type="password" name="senha" id="senha" class="form-control"
+                  placeholder="Senha"  [(ngModel)]="senha"
+                  #campoSenha="ngModel" required/>
+                </div>
+                <app-mensagem
+                  *ngIf="campoSenha.invalid && campoSenha.touched"
+                  mensagem="Senha obrigatória">
+                </app-mensagem>
+              </div>
+            </div>
           </div>
-        </div>
+    
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox"
+                id="flexSwitch" (change)="checkRemember()">
+                <label class="fw-bolder"
+                for="flexSwitch">Logar automaticamente</label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="d-grid gap-2 mx-auto">
+                <button  type="submit" class="btn btn-primary"
+                [disabled]="loginForm.invalid">
+                Entrar</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
-</div>
+<!-- </div> -->
