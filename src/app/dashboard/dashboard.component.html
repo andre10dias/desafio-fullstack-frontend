@@ -44,7 +44,7 @@
     </div>
 
     <div class="row middle-content">
-      <div class="col-sm-4">
+      <div class="col-sm-4 pl-10">
         <img
           class="img-fluid d-none d-sm-block"
           [src]="this.source"
@@ -52,7 +52,7 @@
         />
       </div>
   
-      <div class="col-sm-8">
+      <div class="col-sm-8 pl-20">
         <app-dashboard-chart 
           [dataSoftUpdate]="this.dataSoftUpdate"
           [dataConnected]="this.dataConnected">
@@ -97,7 +97,7 @@
   </div>
 
   <div class="row middle-content">
-    <div class="col-sm-4">
+    <div class="col-sm-4 pl-10">
       <img
         class="img-fluid d-none d-sm-block"
         [src]="this.source"
@@ -105,7 +105,7 @@
       />
     </div>
 
-    <div class="col-sm-8 ml-5">
+    <div class="col-sm-8 pl-20">
       <div *ngFor="let data of dataChart$ | async; let i = index" [attr.data-index]="i">
         <div *ngIf="this.random == i">
           <app-dashboard-chart 

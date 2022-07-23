@@ -32,9 +32,16 @@ select {
 .middle-content {
   position: absolute;
   flex-wrap: nowrap;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  margin: 3vh 0 3vh 10px;
   align-items: center;
+}
+
+.ml-20 {
+  padding-left: 20vh;
+}
+
+.pl-10 {
+  padding-left: 10vh;
 }
 
 /* .flex-box {
