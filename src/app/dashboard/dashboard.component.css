@@ -30,8 +30,10 @@ select {
 }
 
 .middle-content {
+  position: absolute;
   flex-wrap: nowrap;
-  margin: 60px 30px 80px 160px;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
   align-items: center;
 }
 

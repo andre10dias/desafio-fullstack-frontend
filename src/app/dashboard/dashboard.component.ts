@@ -47,14 +47,18 @@ export class DashboardComponent implements OnInit {
         const vehicle = resp[0];
         selecao = vehicle.modelo
 
+        let totalVendas = +vehicle.total_vendas - +vehicle.conectado;
+
         this.dataConnected = [
-          ['Total de vendas', vehicle.total_vendas],
-          ['Conectados', vehicle.conectado],
+          ['Total de vendas', totalVendas],
+          ['Conectados', +vehicle.conectado],
         ];
 
+        totalVendas = +vehicle.total_vendas - +vehicle.atualizacao_software;
+
         this.dataSoftUpdate = [
-          ['Total de vendas', vehicle.total_vendas],
-          ['Update software', vehicle.atualizacao_software],
+          ['Total de vendas', totalVendas],
+          ['Update software', +vehicle.atualizacao_software],
         ];
       }
       
@@ -128,16 +132,6 @@ export class DashboardComponent implements OnInit {
           let img = element.modelo.toLowerCase().replace(/ /g, "");
           this.source = `assets/img/${img}.png`;
           this.alt = `Imagem FORD ${img}`;
-
-          this.dataConnected = [
-            ['Total de vendas', element.total_vendas],
-            ['Conectados', element.conectado],
-          ];
-  
-          this.dataSoftUpdate = [
-            ['Total de vendas', element.total_vendas],
-            ['Update software', element.atualizacao_software],
-          ];
         }
 
         select?.appendChild(option);

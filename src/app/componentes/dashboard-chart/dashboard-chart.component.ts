@@ -86,13 +86,18 @@ export class DashboardChartComponent implements OnInit {
     return {
       //legend: 'none',
       pieHole: 0.5,
-      width: 400,
-      height: 300,
+      width: 490,
+      height: 320,
       colors:['#a9a9a9','#0f4b84'],
       titleTextStyle: {
         fontSize: 20
       },
-      legend: {position: 'bottom', textStyle: {fontSize: 12}}
+      legend: {
+        position: 'bottom', 
+        textStyle: {
+          fontSize: 16
+        }
+      }
     }
   }
 
