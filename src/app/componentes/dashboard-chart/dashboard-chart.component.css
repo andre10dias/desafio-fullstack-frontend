@@ -1,19 +1,29 @@
-div .chart {
-    float: left;
+.chart1 {
+    padding-left: 18vh;
 }
 
-.legenda {
+.chart2 {
+    padding-left: 5vh;
+}
+
+.legenda1, .legenda2 {
     position: relative;
 }
 
-.legenda span {
+.legenda1 span, .legenda2 span {
     position: absolute;
-    top: 0%;
-    left: 42%;
     transform: translate(-50%,-50%);
     font-size: 30px;
     color: #0f4b84;
     font-weight: 600;
+}
+
+.legenda1 span {
+    left: calc(18vh * 100 / 41);
+}
+
+.legenda2 span {
+    left: calc(5vh * 100 / 16);
 }
 
 /* div span {
