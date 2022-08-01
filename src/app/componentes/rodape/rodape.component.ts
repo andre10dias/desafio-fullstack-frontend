@@ -48,8 +48,6 @@ export class RodapeComponent implements OnInit {
       //Pega um item aleatório para exibir na tela
       let random = this.utilService.getRandomNum(e.length);
 
-      console.log('data1')
-
       e.forEach((element: any, index: any) => {
         let input = document.querySelector('#inputDefault');
         let inputHidden = document.querySelector('#id');
@@ -64,8 +62,6 @@ export class RodapeComponent implements OnInit {
           details.push(element.latitude);
           details.push(element.longitude);
         }
-
-        console.log('data2')
 
         let tds = document.querySelectorAll('.data');
         let i = 0;

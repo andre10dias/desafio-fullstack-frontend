@@ -47,17 +47,17 @@ export class DashboardComponent implements OnInit {
         const vehicle = resp[0];
         selecao = vehicle.modelo
 
-        let totalVendas = +vehicle.total_vendas - +vehicle.conectado;
+        let naoConectados = +vehicle.total_vendas - +vehicle.conectado;
 
         this.dataConnected = [
-          ['Total de vendas', totalVendas],
+          ['Não conectados', naoConectados],
           ['Conectados', +vehicle.conectado],
         ];
 
-        totalVendas = +vehicle.total_vendas - +vehicle.atualizacao_software;
+        let naoAtualizados = +vehicle.total_vendas - +vehicle.atualizacao_software;
 
         this.dataSoftUpdate = [
-          ['Total de vendas', totalVendas],
+          ['Não atualizados', naoAtualizados],
           ['Update software', +vehicle.atualizacao_software],
         ];
       }

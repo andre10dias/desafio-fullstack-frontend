@@ -110,11 +110,11 @@
         <div *ngIf="this.random == i">
           <app-dashboard-chart 
             [dataConnected]="[
-              ['Total de vendas', +data.total_vendas - +data.conectado],
+              ['Não conectados', +data.total_vendas - +data.conectado],
               ['Conectados', data.conectado],
             ]"
             [dataSoftUpdate]="[
-              ['Total de vendas', +data.total_vendas - +data.atualizacao_software],
+              ['Não atualizados', +data.total_vendas - +data.atualizacao_software],
               ['Update Software', data.atualizacao_software],
             ]">
           </app-dashboard-chart>

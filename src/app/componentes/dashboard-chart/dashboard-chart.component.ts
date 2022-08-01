@@ -27,6 +27,8 @@ export class DashboardChartComponent implements OnInit {
     this.service.getDataChart(this.dataConnected).subscribe({
       next: (dados) => {
         this.dataConnected = dados;
+        this.connectedPerc = +dados[1][1] * 100 / (+dados[0][1] + +dados[1][1]);
+        this.connectedPerc = parseFloat(this.connectedPerc.toFixed(2));
         this.init();
       },
       error: (error) => {
@@ -39,6 +41,8 @@ export class DashboardChartComponent implements OnInit {
     this.service.getDataChart(this.dataSoftUpdate).subscribe({
       next: (dados) => {
         this.dataSoftUpdate = dados;
+        this.softUpdatePerc = +dados[1][1] * 100 / (+dados[0][1] + +dados[1][1]);
+        this.softUpdatePerc = parseFloat(this.softUpdatePerc.toFixed(2));
         this.init();
       },
       error: (error) => {
@@ -75,7 +79,8 @@ export class DashboardChartComponent implements OnInit {
 
   getDataTable(dados: (string | number)[][]): (string | number)[][] {
     const data = new google.visualization.DataTable();
-    data.addColumn('string', 'Total de vendas');
+
+    data.addColumn('string', 'Valores');
     data.addColumn('number', dados);
     data.addRows(dados);
 
@@ -84,20 +89,20 @@ export class DashboardChartComponent implements OnInit {
 
   getOptions(): any {
     return {
-      //legend: 'none',
+      legend: 'none',
       pieHole: 0.5,
-      width: 490,
-      height: 320,
+      width: 470,
+      height: 300,
       colors:['#a9a9a9','#0f4b84'],
       titleTextStyle: {
         fontSize: 20
       },
-      legend: {
-        position: 'bottom', 
-        textStyle: {
-          fontSize: 16
-        }
-      }
+      // legend: {
+      //   position: 'bottom', 
+      //   textStyle: {
+      //     fontSize: 16
+      //   }
+      // }
     }
   }
 

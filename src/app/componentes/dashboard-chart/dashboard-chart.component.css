@@ -1,5 +1,19 @@
-div {
+div .chart {
     float: left;
+}
+
+.legenda {
+    position: relative;
+}
+
+.legenda span {
+    position: absolute;
+    top: 0%;
+    left: 42%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    color: #0f4b84;
+    font-weight: 600;
 }
 
 /* div span {
